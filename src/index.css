@@ -1,0 +1,186 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #212529;
+  background: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.product-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  object-fit: cover;
+}
+
+button {
+  cursor: pointer;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+
+.foodie-page {
+  min-height: 100vh;
+  background: #fff;
+  color: #252525;
+}
+
+.foodie-search-banner {
+  padding: 35px;
+  border-radius: 18px;
+  background: linear-gradient(120deg, #fff0e9, #fff8f1);
+}
+
+.foodie-search-banner > p:first-child {
+  color: #e23744;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.foodie-search-banner h1 {
+  max-width: 650px;
+  font-weight: 800;
+  font-size: clamp(28px, 4vw, 44px);
+}
+
+.foodie-search-banner p {
+  color: #686868;
+}
+
+.foodie-red-btn {
+  background: #e23744;
+  color: white;
+  border: 1px solid #e23744;
+  border-radius: 8px;
+  padding: 11px 22px;
+  font-weight: 600;
+}
+
+.foodie-red-btn:hover {
+  background: #c92533;
+  color: white;
+}
+
+.foodie-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 0 16px;
+  height: 54px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.foodie-search span {
+  font-size: 28px;
+  color: #e23744;
+}
+
+.foodie-search input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+
+.foodie-section-title {
+  font-size: 25px;
+  font-weight: 750;
+  margin-bottom: 22px;
+}
+
+.foodie-category-row {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  padding: 5px 2px 18px;
+}
+
+.foodie-category {
+  flex: 0 0 115px;
+  text-align: center;
+  color: #333;
+  text-decoration: none;
+}
+
+.foodie-category span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 94px;
+  height: 94px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  background: #fff2ed;
+  font-size: 42px;
+  transition: transform 0.2s;
+}
+
+.foodie-category:hover span {
+  transform: translateY(-4px);
+}
+
+.foodie-category small {
+  font-weight: 600;
+}
+
+.foodie-view-all {
+  color: #e23744;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.foodie-page .card {
+  border: 1px solid #eee;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.foodie-page .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
+}
+
+.foodie-page .card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+@media (max-width: 576px) {
+  .foodie-search-banner {
+    padding: 24px;
+  }
+
+  .foodie-section-title {
+    font-size: 21px;
+  }
+
+  .foodie-category-row {
+    gap: 12px;
+  }
+}
