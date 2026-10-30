@@ -1,9 +1,9 @@
 
-function Loader({ message = "Loading..." }) {
+function Loader({ message = "Loading delicious food..." }) {
   return (
-    <div className="text-center py-5" role="status">
-      <div className="spinner-border text-primary" />
-      <p className="mt-3">{message}</p>
+    <div className="foodie-loader" role="status" aria-live="polite">
+      <span className="foodie-spinner" aria-hidden="true" />
+      <p>{message}</p>
     </div>
   );
 }

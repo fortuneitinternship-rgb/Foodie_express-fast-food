@@ -1,0 +1,260 @@
+
+.foodie-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 3px 18px rgba(24, 31, 40, 0.09);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.foodie-header-main {
+  width: min(100% - 40px, 1440px);
+  min-height: 86px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.foodie-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.foodie-logo-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 15px;
+  background: #fff0e4;
+  font-size: 30px;
+}
+
+.foodie-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.foodie-brand-text strong {
+  color: #202832;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  white-space: nowrap;
+}
+
+.foodie-brand-text strong span {
+  color: #f47b20;
+}
+
+.foodie-brand-text small {
+  color: #68717c;
+  font-size: 10px;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.foodie-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  max-width: 510px;
+  min-width: 180px;
+  height: 46px;
+  padding: 4px 5px 4px 14px;
+  background: #f6f7f8;
+  border: 1px solid #e6e8eb;
+  border-radius: 12px;
+}
+
+.foodie-search > span {
+  color: #69717c;
+  font-size: 25px;
+}
+
+.foodie-search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #202832;
+  font-size: 13px;
+}
+
+.foodie-search button {
+  height: 36px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 8px;
+  background: #f47b20;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.foodie-search button:hover,
+.foodie-login:hover {
+  background: #d9610b;
+}
+
+.foodie-header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.foodie-action {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #303944;
+  font-size: 13px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.foodie-action:hover {
+  color: #f47b20;
+}
+
+.foodie-action b {
+  color: #f47b20;
+  font-size: 12px;
+}
+
+.foodie-login {
+  padding: 11px 17px;
+  border-radius: 9px;
+  background: #f47b20;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.foodie-category-bar {
+  overflow-x: auto;
+  background: #202832;
+  scrollbar-width: thin;
+}
+
+.foodie-category-inner {
+  width: min(100% - 40px, 1440px);
+  min-height: 53px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.foodie-category {
+  flex-shrink: 0;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: #f5f6f7;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.foodie-category:hover,
+.foodie-category.active {
+  background: #f47b20;
+  color: #fff;
+}
+
+@media (max-width: 1100px) {
+  .foodie-header-main {
+    flex-wrap: wrap;
+    padding: 14px 0;
+    gap: 14px;
+  }
+
+  .foodie-search {
+    order: 3;
+    flex-basis: 100%;
+    max-width: none;
+  }
+
+  .foodie-header-actions {
+    margin-left: auto;
+  }
+
+  .foodie-category-inner {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .foodie-header-main,
+  .foodie-category-inner {
+    width: calc(100% - 24px);
+  }
+
+  .foodie-brand {
+    gap: 7px;
+  }
+
+  .foodie-logo-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 23px;
+  }
+
+  .foodie-brand-text strong {
+    font-size: 19px;
+  }
+
+  .foodie-brand-text small {
+    font-size: 9px;
+  }
+
+  .foodie-header-actions {
+    gap: 10px;
+  }
+
+  .foodie-action {
+    font-size: 0;
+  }
+
+  .foodie-action span {
+    font-size: 20px;
+  }
+
+  .foodie-action b {
+    font-size: 11px;
+  }
+
+  .foodie-login {
+    padding: 9px 11px;
+    font-size: 12px;
+  }
+
+  .foodie-search {
+    height: 43px;
+  }
+
+  .foodie-search input {
+    font-size: 12px;
+  }
+
+  .foodie-search button {
+    padding: 0 10px;
+    font-size: 12px;
+  }
+}

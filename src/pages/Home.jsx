@@ -4,8 +4,11 @@ import { products } from "../data/products.jsx";
 import ProductCard from "../components/ProductCard.jsx";
 
 function Home() {
-  const { addToCart, toggleWishlist, wishlist = [] } =
-    useOutletContext();
+  const {
+    addToCart,
+    toggleWishlist,
+    wishlist = [],
+  } = useOutletContext() || {};
 
   const categories = [
     { name: "Veg Noodles", emoji: "🍜" },
@@ -13,7 +16,7 @@ function Home() {
     { name: "Veg Fried Rice", emoji: "🍚" },
     { name: "Non-Veg Fried Rice", emoji: "🍗" },
     { name: "Manchurian", emoji: "🥘" },
-    { name: "Cool Drinks", emoji: "🥤" }
+    { name: "Cool Drinks", emoji: "🥤" },
   ];
 
   return (
@@ -23,7 +26,6 @@ function Home() {
           <p className="mb-1">GOOD FOOD. GOOD MOOD.</p>
           <h1>Order your favourite fast food!</h1>
           <p>Hot noodles, fried rice, Manchurian & cool drinks.</p>
-
           <Link to="/products" className="btn foodie-red-btn">
             Explore Menu
           </Link>
@@ -60,9 +62,7 @@ function Home() {
         </div>
 
         <div className="d-flex justify-content-between align-items-center mb-3">
-          <h2 className="foodie-section-title mb-0">
-            Popular Fast Food
-          </h2>
+          <h2 className="foodie-section-title mb-0">Popular Fast Food</h2>
           <Link to="/products" className="foodie-view-all">
             View all →
           </Link>

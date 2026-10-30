@@ -1,18 +1,20 @@
 
 function Button({
   children,
-  onClick,
   variant = "primary",
   type = "button",
+  onClick,
+  disabled = false,
   className = "",
-  disabled = false
+  ...props
 }) {
   return (
     <button
       type={type}
+      className={`foodie-btn foodie-btn-${variant} ${className}`.trim()}
       onClick={onClick}
       disabled={disabled}
-      className={`btn btn-${variant} ${className}`}
+      {...props}
     >
       {children}
     </button>

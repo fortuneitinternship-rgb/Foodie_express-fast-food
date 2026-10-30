@@ -1,10 +1,15 @@
 
 import { useOutletContext, useSearchParams } from "react-router-dom";
+import { products } from "../data/products.jsx";
 import ProductCard from "../components/ProductCard.jsx";
 
 function Products() {
-  const { products, addToCart, wishlist, toggleWishlist } =
-    useOutletContext();
+  const context = useOutletContext() || {};
+  const {
+    addToCart,
+    toggleWishlist,
+    wishlist = [],
+  } = context;
 
   const [searchParams, setSearchParams] = useSearchParams();
   const search = searchParams.get("search") || "";
@@ -32,8 +37,8 @@ function Products() {
           placeholder="Search products..."
           value={search}
           onChange={(event) => {
-            const value = event.target.value;
             const next = new URLSearchParams(searchParams);
+            const value = event.target.value;
 
             if (value) next.set("search", value);
             else next.delete("search");
@@ -44,11 +49,11 @@ function Products() {
 
         <select
           className="form-select"
-          style={{ maxWidth: 220 }}
+          style={{ maxWidth: 250 }}
           value={category}
           onChange={(event) => {
-            const value = event.target.value;
             const next = new URLSearchParams(searchParams);
+            const value = event.target.value;
 
             if (value === "All") next.delete("category");
             else next.set("category", value);
@@ -57,9 +62,12 @@ function Products() {
           }}
         >
           <option value="All">All Categories</option>
-          <option value="Veg">Veg</option>
-          <option value="FNon-veg">Non-veg</option>
-          <option value="Soft Drinks">Soft Drinks</option>
+          <option value="Veg Noodles">Veg Noodles</option>
+          <option value="Non-Veg Noodles">Non-Veg Noodles</option>
+          <option value="Veg Fried Rice">Veg Fried Rice</option>
+          <option value="Non-Veg Fried Rice">Non-Veg Fried Rice</option>
+          <option value="Manchurian">Manchurian</option>
+          <option value="Cool Drinks">Cool Drinks</option>
         </select>
       </div>
 

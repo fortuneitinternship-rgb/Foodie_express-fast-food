@@ -2,16 +2,17 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
+import "../App.css";
 
 function MainLayout(props) {
   return (
-    <div className="d-flex flex-column min-vh-100">
+    <div className="foodie-app">
       <Navbar
         cart={props.cart}
         wishlist={props.wishlist}
       />
 
-      <main className="flex-grow-1">
+      <main className="foodie-main-content">
         <Outlet context={props} />
       </main>
 

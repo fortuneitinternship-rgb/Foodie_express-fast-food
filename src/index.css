@@ -1,186 +1,176 @@
 
+:root {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  color: #202832;
+  background: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --foodie-primary: #f47b20;
+  --foodie-primary-hover: #d9610b;
+  --foodie-dark: #202832;
+  --foodie-text: #303944;
+  --foodie-muted: #68717c;
+  --foodie-surface: #ffffff;
+  --foodie-background: #f7f8fa;
+  --foodie-border: #e6e8eb;
+
+  --foodie-radius: 12px;
+  --foodie-shadow: 0 4px 18px rgba(24, 31, 40, 0.08);
+
+  --foodie-container: 1440px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  color: #212529;
-  background: #ffffff;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--foodie-background);
+  color: var(--foodie-text);
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font-size: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 a {
-  text-decoration: none;
+  color: inherit;
 }
 
-.navbar-brand {
-  font-size: 1.5rem;
-}
-
-.product-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-}
-
-.card-img-top {
-  object-fit: cover;
-}
-
-button {
-  cursor: pointer;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-
-.foodie-page {
+#root {
   min-height: 100vh;
-  background: #fff;
-  color: #252525;
 }
 
-.foodie-search-banner {
-  padding: 35px;
-  border-radius: 18px;
-  background: linear-gradient(120deg, #fff0e9, #fff8f1);
+:focus-visible {
+  outline: 3px solid rgba(244, 123, 32, 0.55);
+  outline-offset: 3px;
 }
 
-.foodie-search-banner > p:first-child {
-  color: #e23744;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 2px;
-}
-
-.foodie-search-banner h1 {
-  max-width: 650px;
-  font-weight: 800;
-  font-size: clamp(28px, 4vw, 44px);
-}
-
-.foodie-search-banner p {
-  color: #686868;
-}
-
-.foodie-red-btn {
-  background: #e23744;
-  color: white;
-  border: 1px solid #e23744;
-  border-radius: 8px;
-  padding: 11px 22px;
-  font-weight: 600;
-}
-
-.foodie-red-btn:hover {
-  background: #c92533;
-  color: white;
-}
-
-.foodie-search {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  border: 1px solid #e5e5e5;
-  border-radius: 10px;
-  padding: 0 16px;
-  height: 54px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
-}
-
-.foodie-search span {
-  font-size: 28px;
-  color: #e23744;
-}
-
-.foodie-search input {
-  flex: 1;
-  min-width: 0;
-  border: none;
-  outline: none;
-  font-size: 15px;
-}
-
-.foodie-section-title {
-  font-size: 25px;
-  font-weight: 750;
-  margin-bottom: 22px;
-}
-
-.foodie-category-row {
-  display: flex;
-  gap: 22px;
-  overflow-x: auto;
-  padding: 5px 2px 18px;
-}
-
-.foodie-category {
-  flex: 0 0 115px;
-  text-align: center;
-  color: #333;
-  text-decoration: none;
-}
-
-.foodie-category span {
-  display: flex;
+.foodie-btn {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 94px;
-  height: 94px;
-  margin: 0 auto 10px;
-  border-radius: 50%;
-  background: #fff2ed;
-  font-size: 42px;
-  transition: transform 0.2s;
+  gap: 8px;
+  min-height: 42px;
+  padding: 10px 18px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.foodie-category:hover span {
-  transform: translateY(-4px);
+.foodie-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
 }
 
-.foodie-category small {
-  font-weight: 600;
+.foodie-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
 }
 
-.foodie-view-all {
-  color: #e23744;
-  text-decoration: none;
-  font-weight: 600;
+.foodie-btn-primary {
+  background: var(--foodie-primary);
+  color: #fff;
 }
 
-.foodie-page .card {
-  border: 1px solid #eee;
-  border-radius: 14px;
+.foodie-btn-primary:hover:not(:disabled) {
+  background: var(--foodie-primary-hover);
+}
+
+.foodie-btn-secondary {
+  background: var(--foodie-dark);
+  color: #fff;
+}
+
+.foodie-btn-outline {
+  border-color: var(--foodie-primary);
+  background: transparent;
+  color: var(--foodie-primary);
+}
+
+.foodie-btn-outline:hover:not(:disabled) {
+  background: #fff0e4;
+}
+
+.foodie-card {
+  min-width: 0;
   overflow: hidden;
-  transition: box-shadow 0.2s, transform 0.2s;
+  border: 1px solid var(--foodie-border);
+  border-radius: var(--foodie-radius);
+  background: var(--foodie-surface);
+  box-shadow: var(--foodie-shadow);
 }
 
-.foodie-page .card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
+.foodie-loader {
+  display: flex;
+  min-height: 180px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  color: var(--foodie-muted);
+  text-align: center;
 }
 
-.foodie-page .card img {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
+.foodie-loader p {
+  margin: 0;
 }
 
-@media (max-width: 576px) {
-  .foodie-search-banner {
-    padding: 24px;
+.foodie-spinner {
+  width: 38px;
+  height: 38px;
+  border: 4px solid #ffe1ca;
+  border-top-color: var(--foodie-primary);
+  border-radius: 50%;
+  animation: foodie-spin 0.8s linear infinite;
+}
+
+@keyframes foodie-spin {
+  to {
+    transform: rotate(360deg);
   }
+}
 
-  .foodie-section-title {
-    font-size: 21px;
-  }
-
-  .foodie-category-row {
-    gap: 12px;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }

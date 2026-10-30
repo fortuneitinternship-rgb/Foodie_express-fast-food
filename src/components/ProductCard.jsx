@@ -1,54 +1,61 @@
 
-import { Link } from "react-router-dom";
+import { getFoodImage } from "../data/products.jsx";
 
 function ProductCard({
   product,
   addToCart,
   toggleWishlist,
-  isWishlisted,
+  isWishlisted = false,
 }) {
-  return (
-    <div className="card h-100 shadow-sm product-card">
-      <Link to={`/products/${product.id}`}>
-        <img
-          src={product.image}
-          alt={product.name}
-          className="card-img-top"
-          style={{ height: "220px", objectFit: "cover" }}
-        />
-      </Link>
+  const handleImageError = (event) => {
+    event.currentTarget.onerror = null;
+    event.currentTarget.src = getFoodImage("Veg Noodles");
+  };
 
-      <button
-        type="button"
-        className="btn btn-light position-absolute top-0 end-0 m-2"
-        onClick={() => toggleWishlist(product)}
-        aria-label="Toggle wishlist"
-      >
-        <i className={isWishlisted ? "bi bi-heart-fill text-danger" : "bi bi-heart"} />
-      </button>
+  return (
+    <article className="card h-100 border-0 shadow-sm overflow-hidden">
+      <img
+        src={product.image || getFoodImage(product.category)}
+        alt={product.name}
+        onError={handleImageError}
+        className="card-img-top"
+        style={{ height: 190, objectFit: "cover" }}
+      />
 
       <div className="card-body d-flex flex-column">
-        <h5 className="card-title">{product.name}</h5>
+        <div className="d-flex justify-content-between gap-2">
+          <h5 className="card-title">{product.name}</h5>
 
-        <p className="text-muted mb-2">{product.category}</p>
+          <button
+            type="button"
+            className="btn btn-sm"
+            aria-label="Toggle wishlist"
+            onClick={() => toggleWishlist?.(product)}
+          >
+            {isWishlisted ? "❤️" : "🤍"}
+          </button>
+        </div>
 
-        <p className="mb-2">
-          <i className="bi bi-star-fill text-warning me-1" />
-          {product.rating} / 5
+        <p className="text-secondary small">{product.category}</p>
+
+        <p className="card-text flex-grow-1">
+          {product.description}
         </p>
 
-        <h5>₹{product.price.toLocaleString("en-IN")}</h5>
+        <div className="d-flex justify-content-between align-items-center">
+          <span>⭐ {product.rating}</span>
+          <strong>₹{product.price}</strong>
+        </div>
 
         <button
           type="button"
-          className="btn btn-dark w-100 mt-auto"
-          onClick={() => addToCart(product)}
+          className="btn btn-danger mt-3"
+          onClick={() => addToCart?.(product)}
         >
-          <i className="bi bi-cart-plus me-2" />
           Add to Cart
         </button>
       </div>
-    </div>
+    </article>
   );
 }
 
